@@ -1,0 +1,15 @@
+#!/bin/bash
+case $1 in
+  "up")
+    docker compose up
+  ;;
+  "bg-up")
+    docker compose start
+  ;;
+  "bg-drop")
+    docker compose stop
+  ;;
+  *)
+    echo Unexpected command.
+  ;;
+esac

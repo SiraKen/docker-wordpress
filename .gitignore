@@ -1,0 +1,8 @@
+# wordpress
+wp-content/
+
+# env
+.env
+
+# misc
+.DS_Store
