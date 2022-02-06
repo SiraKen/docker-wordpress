@@ -1,6 +1,13 @@
 #!/bin/bash
 case $1 in
+  "init")
+    cp example.env .env
+  ;;
   "up")
+    docker compose up
+  ;;
+  "reset")
+    docker compose down && \
     docker compose up
   ;;
   "bg-up")
