@@ -1,19 +1,26 @@
-version: "2"
+version: "3"
 
 services:
   wordpress:
-    image: wordpress:latest
+    build: .
     ports:
-      - "4001:80"
+      - "8080:80"
+    volumes:
+      - ./html:/var/www/html
     depends_on:
       - mysql
     env_file: .env
-    volumes:
-      - ./wp-content:/var/www/html/wp-content
+    restart: always
 
   mysql:
-    platform: linux/x86_64 # for Apple Silicon
     image: mysql:5.7
-    env_file: .env
+    platform: linux/x86_64 # for Apple Silicon
     ports:
       - "3307:3306"
+    volumes:
+      - db_mysql:/var/lib/mysql
+    env_file: .env
+    restart: always
+
+volumes:
+  db_mysql:

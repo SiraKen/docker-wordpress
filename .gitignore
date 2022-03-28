@@ -1,5 +1,6 @@
 # wordpress
-wp-content/
+html/*
+!html/wp-content
 
 # env
 .env

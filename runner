@@ -1,4 +1,6 @@
 #!/bin/bash
+set -Ceux
+
 case $1 in
   "init")
     cp example.env .env
@@ -6,15 +8,12 @@ case $1 in
   "up")
     docker compose up
   ;;
+  "down")
+    docker compose down
+  ;;
   "reset")
     docker compose down && \
     docker compose up
-  ;;
-  "bg-up")
-    docker compose start
-  ;;
-  "bg-drop")
-    docker compose stop
   ;;
   *)
     echo Unexpected command.

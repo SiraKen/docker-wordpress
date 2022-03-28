@@ -3,7 +3,7 @@
 ## Set up
 
 1. Execute `./runner up`.
-2. Access to `http://localhost:4001`.
+2. Access to `http://localhost:8080`.
 3. Initial set up WordPress.
 4. Remove unnecessary themes.
 5. Copy the theme folder you want to customize into `wp-content/themes`.
